@@ -1,80 +1,72 @@
-import React from 'react'
-import Magazine from './Magazines/Magazine'
-import magazineItems from './Magazines/MagazineItems'
+import React, { useState, useEffect } from "react";
+import Magazine from "./Magazines/Magazine";
+import magazineItems from "./Magazines/MagazineItems";
+import { useDispatch, useSelector } from "react-redux";
+import { load, remove, status, setup } from "../../Redux/thunks";
+import { getLimitMessages, getSetUp } from "../../Redux/Selectors";
 import {
-    Container,
-    ContainerHeader,
-    ContainerInfo,
-    ContainerPicture,
-    InfoMain,
-    Subtitle,
-    Title,
-    Text,
-    MainButton,
-    InfoPicture,
-    ContainerMagazine,
-    ContainerBox,
-    ContainerPost,
-    InfoBody,
-    PicBody,
-    Picture,
-    ContainerBody,
-    BodyButton,
-} from './MainStyled'
+  Container,
+  Title,
+  ContainerMagazine,
+  ContainerBox,
+  ContainerPost,
+  IconButton,
+  IconPic,
+} from "./MainStyled";
+import Messages from "./Messages/Messages";
+import Header from "./InfoMain/Header";
+import Body from "./InfoMain/Body";
+import FootBody from "./InfoMain/FootBody";
+import Config from "./Config/Config";
 
 const Main = () => {
-    return (
-        <Container>
-            <ContainerHeader>
-                <ContainerInfo>
-                    <InfoMain>
-                        <Subtitle>ATTENTION ONLINE ADVERTISERS</Subtitle>
-                        <Title>What´s Your Online Advertising Readiness Rating?</Title>
-                        <Text>When you take this quiz, you’ll get a free report that outlines YOUR Readiness Rating.</Text>
-                        <MainButton>START QUIZ</MainButton>
-                        <Text>Learn more about Readiness Raitings</Text>
-                    </InfoMain>
-                </ContainerInfo>
-                <ContainerPicture>
-                    <InfoPicture>Learning about my rating - and WHAT to do about it, has really changed the way I do online advertising. It is all about being a master at this craft, and staying there. Andrea - Barranquilla, Colombia.</InfoPicture>
-                </ContainerPicture>   
-            </ContainerHeader>
-            <ContainerMagazine>
-                    {magazineItems 
-                        ? 
-                            magazineItems.map((item, i) => (
-                                <Magazine key={i} pics = {item.url} index={i} />)) 
-                        :
-                            <Title>There´s not Magazines</Title>
-                    }
-            </ContainerMagazine> 
-            <ContainerBox>
-                <ContainerPost>
+  const limitedMessages = useSelector((state) => getLimitMessages(state));
+  const setUp = useSelector((state) => getSetUp(state));
 
-                </ContainerPost>
-            </ContainerBox>  
-            <ContainerBox>
-                <InfoBody>
-                    <Subtitle weight='300' color='black'>WHY IT IS IMPORTANT</Subtitle>
-                    <Title color='black'>Knowing Your Online Ads Readiness Raiting...</Title>
-                    <Text top='30px' bottom='30px' color='black'>...will help you understand just how bullish you should be with your ad spend and where your blind spots are.</Text>
+  const dispatch = useDispatch();
 
-                    <Text bottom='30px' color='black'>When it comes to online advertising the more informed and ready you are, the more effective your advertising will be (and the greater your chances of a healthy Return on your Ad Spend (ROAS)).</Text>
+  const loadingMessages = (link) => dispatch(load(link));
 
-                    <Text bottom='30px' color='black'>Find Out your Online Advertising Readiness Rating so you can make more money and avoid risks with your online advertising.</Text>
-                </InfoBody>
-                <PicBody>
-                    <Picture size='80%' src='https://imgbox.es/images/2021/04/13/report5de505d7946d72a2.png' /> 
-                </PicBody>
-            </ContainerBox>  
-            <ContainerBody>
-                    <Title size='2.5rem' pTop='35px'>Find Out YOUR Online Advertising Readiness Rating!</Title>
-                    <BodyButton>START QUIZ</BodyButton>
-            </ContainerBody>  
-            
-            
-        </Container> 
-    )
+  const removeMessages = (id) => dispatch(remove(id));
+
+  const changeStatus = () => dispatch(status());
+
+  const changeSetUp = (payload) => dispatch(setup(payload));
+
+  useEffect(() => {
+    loadingMessages(setUp.link);
+  }, [dispatch]);
+
+  return (
+    <Container>
+      <Header />
+      <ContainerMagazine>
+        {magazineItems ? (
+          magazineItems.map((item, i) => (
+            <Magazine key={i} pics={item.url} index={i} />
+          ))
+        ) : (
+          <Title>There´s not Magazines</Title>
+        )}
+      </ContainerMagazine>
+      <ContainerBox>
+        <ContainerPost>
+          <IconButton onClick={() => changeStatus()}>
+            <IconPic src="https://imgbox.es/images/2021/04/15/settings93865d717b293d72.png" />
+          </IconButton>
+          {setUp.status ? (
+            limitedMessages.map((item, i) => (
+              <Messages key={i} remove={removeMessages} message={item} />
+            ))
+          ) : (
+            <Config changeSetUp={changeSetUp} setUp={setUp} />
+          )}
+        </ContainerPost>
+      </ContainerBox>
+      <Body />
+      <FootBody />
+    </Container>
+  );
 };
 
 export default Main;
