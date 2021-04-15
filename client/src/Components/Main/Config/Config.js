@@ -10,7 +10,7 @@ const Config = ({ changeSetUp, setUp }) => {
   const [input, setInput] = useState({
     link: "",
     cant: setUp.cant,
-    id: setUp.id,
+    id: "",
   });
 
   const handlerInput = (e) => {
@@ -44,7 +44,8 @@ const Config = ({ changeSetUp, setUp }) => {
       />
       <TextConfig>ID</TextConfig>
       <InputConfig
-        type="number"
+        type="text"
+        placeholder={"Use number 1 if you don´t have an id "}
         autoComplete="off"
         value={input.id}
         name="id"

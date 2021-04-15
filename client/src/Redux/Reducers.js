@@ -5,12 +5,14 @@ import {
   CHANGE_STATUS,
 } from "./Actions";
 
+//http://api.massrelevance.com/MassRelDemo/kindle.json
+
 const initialState = {
   messages: [],
   setUp: {
     status: false,
-    link: "http://api.massrelevance.com/MassRelDemo/kindle.json",
-    cant: 3,
+    link: "",
+    cant: 0,
     id: 1,
   },
 };

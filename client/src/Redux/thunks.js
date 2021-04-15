@@ -8,8 +8,10 @@ import {
 
 export const load = (link) => async (dispatch) => {
   try {
-    const response = await axios.get(link);
-    dispatch(loadMessages(response.data));
+    if (link !== "") {
+      const response = await axios.get(link);
+      dispatch(loadMessages(response.data));
+    }
   } catch (e) {
     console.log(e);
   }

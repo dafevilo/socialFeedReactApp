@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Magazine from "./Magazines/Magazine";
 import magazineItems from "./Magazines/MagazineItems";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,8 +20,9 @@ import FootBody from "./InfoMain/FootBody";
 import Config from "./Config/Config";
 
 const Main = () => {
-  const limitedMessages = useSelector((state) => getLimitMessages(state));
-  const setUp = useSelector((state) => getSetUp(state));
+  let limitedMessages = useSelector((state) => getLimitMessages(state));
+
+  let setUp = useSelector((state) => getSetUp(state));
 
   const dispatch = useDispatch();
 
@@ -33,9 +34,18 @@ const Main = () => {
 
   const changeSetUp = (payload) => dispatch(setup(payload));
 
+  let content =
+    limitedMessages[0] !== undefined ? (
+      limitedMessages.map((item, i) => (
+        <Messages key={i} remove={removeMessages} message={item} />
+      ))
+    ) : (
+      <Title color="#fff">There´s not Messages</Title>
+    );
+
   useEffect(() => {
     loadingMessages(setUp.link);
-  }, [dispatch]);
+  }, [setUp]);
 
   return (
     <Container>
@@ -55,9 +65,7 @@ const Main = () => {
             <IconPic src="https://imgbox.es/images/2021/04/15/settings93865d717b293d72.png" />
           </IconButton>
           {setUp.status ? (
-            limitedMessages.map((item, i) => (
-              <Messages key={i} remove={removeMessages} message={item} />
-            ))
+            content
           ) : (
             <Config changeSetUp={changeSetUp} setUp={setUp} />
           )}
