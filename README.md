@@ -33,6 +33,8 @@ Execute the server using the code
 
 ### You can delete any message that you want, thanks to the DataBase is a JSON you just could delete the messages saved in the local storage
 
-### Thanks to **Redux Persist** you can reload the page and the data will keep there. (Try it)
+![Alt text](https://imgbox.es/images/2021/04/15/Recurso-23x-8b5cf9187233353cd.png)
+
+## Thanks to **Redux Persist** you can reload the page and the data will keep there. (Try it)
 
 # I really enjoy doing this project and I hope that you also appreciate it
