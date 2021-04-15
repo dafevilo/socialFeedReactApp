@@ -8,9 +8,9 @@ import {
 
 const Config = ({ changeSetUp, setUp }) => {
   const [input, setInput] = useState({
-    link: "",
-    cant: setUp.cant,
-    id: "",
+    link: "http://api.massrelevance.com/MassRelDemo/kindle.json",
+    cant: 3,
+    id: '',
   });
 
   const handlerInput = (e) => {
@@ -28,7 +28,6 @@ const Config = ({ changeSetUp, setUp }) => {
       <TextConfig>Link Feed</TextConfig>
       <InputConfig
         type="text"
-        placeholder={setUp.link}
         autoComplete="off"
         value={input.link}
         name="link"
