@@ -13,6 +13,10 @@ This SPA was programed with *REACT** using the follows tools
 
 ## Option #1
 
+Click in the follow link <https://dafevilo.github.io/socialFeedReactApp/>
+
+## Option #2
+
 First, you should do a fork of this repo <https://github.com/dafevilo/socialFeedReactApp.git> 
 
 then, you should clone using the bash terminal whit the command
