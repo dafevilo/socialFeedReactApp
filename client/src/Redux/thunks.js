@@ -9,7 +9,12 @@ import {
 export const load = (link) => async (dispatch) => {
   try {
     if (link !== "") {
-      const response = await axios.get(link);
+      const response = await axios.get(link, {
+        headers:{
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers": "Content-type",
+        }
+      });
       dispatch(loadMessages(response.data));
     }
   } catch (e) {
