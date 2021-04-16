@@ -9,14 +9,7 @@ import {
 export const load = (link) => async (dispatch) => {
   try {
     if (link !== "") {
-      const response = await axios.get(link, {
-        headers: {
-          "Content-Type": "application/json",
-          "access-control-allow-origin": "*",
-          "Access-Control-Allow-Headers": "Content-type",
-          "X-Requested-With": "XMLHttpRequest",
-        },
-      });
+      const response = await axios.get(link);
       dispatch(loadMessages(response.data));
     }
   } catch (e) {
