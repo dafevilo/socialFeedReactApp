@@ -8,7 +8,7 @@ import {
 
 const Config = ({ changeSetUp, setUp }) => {
   const [input, setInput] = useState({
-    link: "http://api.massrelevance.com/MassRelDemo/kindle.json",
+    link: "https://api.massrelevance.com/MassRelDemo/kindle.json",
     cant: 3,
     id: '',
   });
