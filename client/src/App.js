@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Route path="/" component={NavBar} />
       <Switch>
-        <Route exact path="/" component={Main} />
+        <Route path="/" component={Main} />
       </Switch>
       <Route path="/" component={Footer} />
     </Router>
