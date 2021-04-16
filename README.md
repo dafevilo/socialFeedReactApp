@@ -9,7 +9,13 @@ This SPA was programed with *REACT** using the follows tools
 - Redux-reselect
 - Redux-Persist
 
-## How can you show the project? 
+# How can you show the project? 
+
+## Option #1
+
+Click in the follow link: <https://dafevilo.github.io/socialFeedReactApp/>
+
+## Option #2
 
 First, you should do a fork of this repo <https://github.com/dafevilo/socialFeedReactApp.git> 
 
