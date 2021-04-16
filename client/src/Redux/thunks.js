@@ -9,7 +9,9 @@ import {
 export const load = (link) => async (dispatch) => {
   try {
     if (link !== "") {
-      const response = await axios.get(link);
+      const response = await axios.get(link, {
+        headers: {'X-Requested-With': 'XMLHttpRequest'}
+      });
       dispatch(loadMessages(response.data));
     }
   } catch (e) {
