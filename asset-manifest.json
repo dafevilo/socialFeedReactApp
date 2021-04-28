@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/socialFeedReactApp/static/js/main.c2050375.chunk.js",
-    "main.js.map": "/socialFeedReactApp/static/js/main.c2050375.chunk.js.map",
-    "runtime-main.js": "/socialFeedReactApp/static/js/runtime-main.a93b933c.js",
-    "runtime-main.js.map": "/socialFeedReactApp/static/js/runtime-main.a93b933c.js.map",
-    "static/js/2.d3d7389b.chunk.js": "/socialFeedReactApp/static/js/2.d3d7389b.chunk.js",
-    "static/js/2.d3d7389b.chunk.js.map": "/socialFeedReactApp/static/js/2.d3d7389b.chunk.js.map",
-    "static/js/3.ba658256.chunk.js": "/socialFeedReactApp/static/js/3.ba658256.chunk.js",
-    "static/js/3.ba658256.chunk.js.map": "/socialFeedReactApp/static/js/3.ba658256.chunk.js.map",
+    "main.js": "/socialFeedReactApp/static/js/main.b9998466.chunk.js",
+    "main.js.map": "/socialFeedReactApp/static/js/main.b9998466.chunk.js.map",
+    "runtime-main.js": "/socialFeedReactApp/static/js/runtime-main.56caabb9.js",
+    "runtime-main.js.map": "/socialFeedReactApp/static/js/runtime-main.56caabb9.js.map",
+    "static/js/2.46ecd868.chunk.js": "/socialFeedReactApp/static/js/2.46ecd868.chunk.js",
+    "static/js/2.46ecd868.chunk.js.map": "/socialFeedReactApp/static/js/2.46ecd868.chunk.js.map",
+    "static/js/3.416abbbb.chunk.js": "/socialFeedReactApp/static/js/3.416abbbb.chunk.js",
+    "static/js/3.416abbbb.chunk.js.map": "/socialFeedReactApp/static/js/3.416abbbb.chunk.js.map",
     "index.html": "/socialFeedReactApp/index.html",
-    "static/js/2.d3d7389b.chunk.js.LICENSE.txt": "/socialFeedReactApp/static/js/2.d3d7389b.chunk.js.LICENSE.txt"
+    "static/js/2.46ecd868.chunk.js.LICENSE.txt": "/socialFeedReactApp/static/js/2.46ecd868.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a93b933c.js",
-    "static/js/2.d3d7389b.chunk.js",
-    "static/js/main.c2050375.chunk.js"
+    "static/js/runtime-main.56caabb9.js",
+    "static/js/2.46ecd868.chunk.js",
+    "static/js/main.b9998466.chunk.js"
   ]
 }
