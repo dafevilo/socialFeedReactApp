@@ -16,14 +16,14 @@ const Header = () => {
     <ContainerHeader>
       <ContainerInfo>
         <InfoMain>
-          <Subtitle>ATTENTION ONLINE ADVERTISERS</Subtitle>
-          <Title>What´s Your Online Advertising Readiness Rating?</Title>
-          <Text>
+          <Subtitle color="#fff">ATTENTION ONLINE ADVERTISERS</Subtitle>
+          <Title color="#fff">What´s Your Online Advertising Readiness Rating?</Title>
+          <Text color="#fff">
             When you take this quiz, you’ll get a free report that outlines YOUR
             Readiness Rating.
           </Text>
           <MainButton>START QUIZ</MainButton>
-          <Text>Learn more about Readiness Raitings</Text>
+          <Text color="#fff">Learn more about Readiness Raitings</Text>
         </InfoMain>
       </ContainerInfo>
       <ContainerPicture>

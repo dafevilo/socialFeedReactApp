@@ -48,3 +48,15 @@ export const ButtonConfig = styled.button`
   margin: 15px;
   background-color: #06f48a;
 `;
+
+export const ContainerSetUp = styled.div`
+  position: fixed;
+  top: 0px;
+  min-width: 100%;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, .6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+`;

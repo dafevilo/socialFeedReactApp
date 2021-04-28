@@ -50,7 +50,7 @@ export const messages = (state = initialState, action) => {
         ...state,
         setUp: {
           ...state.setUp,
-          status: true,
+          status: !state.setUp.status,
           link: link ? link : state.setUp.link,
           cant: cant ? cant : state.setUp.cant,
           id: id ? id : state.setUp.id,

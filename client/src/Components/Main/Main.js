@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import Magazine from "./Magazines/Magazine";
 import magazineItems from "./Magazines/MagazineItems";
+import {IconContext} from 'react-icons';
+import { SiReact } from "react-icons/si";
 import { useDispatch, useSelector } from "react-redux";
 import { load, remove, status, setup } from "../../Redux/thunks";
 import { getLimitMessages, getSetUp } from "../../Redux/Selectors";
@@ -11,7 +13,6 @@ import {
   ContainerBox,
   ContainerPost,
   IconButton,
-  IconPic,
 } from "./MainStyled";
 import Messages from "./Messages/Messages";
 import Header from "./InfoMain/Header";
@@ -45,7 +46,7 @@ const Main = () => {
 
   useEffect(() => {
     loadingMessages(setUp.link);
-  }, [setUp]);
+  }, [setUp.link]);
 
   return (
     <Container>
@@ -61,18 +62,19 @@ const Main = () => {
       </ContainerMagazine>
       <ContainerBox>
         <ContainerPost>
-          <IconButton onClick={() => changeStatus()}>
-            <IconPic src="https://imgbox.es/images/2021/04/15/settings93865d717b293d72.png" />
-          </IconButton>
-          {setUp.status ? (
-            content
-          ) : (
-            <Config changeSetUp={changeSetUp} setUp={setUp} />
-          )}
+          {content}
         </ContainerPost>
+        <IconButton onClick={() => changeStatus()}>
+            <IconContext.Provider value={{
+              size: "80%"
+            }}>
+              <SiReact />
+            </IconContext.Provider>
+          </IconButton>
       </ContainerBox>
       <Body />
       <FootBody />
+      {setUp.status && <Config changeSetUp={changeSetUp} setUp={setUp} />}
     </Container>
   );
 };

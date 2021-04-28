@@ -227,19 +227,20 @@ export const BodyButton = styled(MainButton)`
 export const IconButton = styled.button`
   border: 0;
   outline: 0 none;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   align-self: flex-end;
-  position: relative;
-  right: 20px;
-  background: transparent;
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  background: #fff;
+  border: 2px solid #000;
+  z-index: 2;
 
   &:hover {
-    border: 2px solid #000;
-    border-radius: 5px;
+    
   }
 `;
 
-export const IconPic = styled.img`
-  width: 100%;
-`;
+
